@@ -1,0 +1,30 @@
+@import "tailwindcss";
+@import "@heroui/styles"; 
+@plugin "daisyui";
+
+@variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --color-bg-primary: #F8FAFC;
+    --color-bg-card: #FFFFFF;
+    --color-text-main: #0F172A;
+    --color-text-muted: #64748B;
+    --color-border: #E2E8F0;
+  }
+
+  [data-theme="dark"],
+  .dark {
+    --color-bg-primary: #0B0F17;
+    --color-bg-card: #151C2C;
+    --color-text-main: #F8FAFC;
+    --color-text-muted: #94A3B8;
+    --color-border: #1E293B;
+  }
+
+  body {
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-main);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
